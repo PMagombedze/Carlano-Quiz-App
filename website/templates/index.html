@@ -20,53 +20,47 @@
     <div class="card-container">
       <div class="card">
         <div class="card-content">
-          <i class="fa-brands fa-wordpress" style="font-size: 50px"></i>
+          <i class="fa-brands fa-wordpress" style="font-size: 50px; cursor:hand;"></i>
           <h3 class="card-title" align="center">WordPress</h3>
         </div>
       </div>
 
       <div class="card">
         <div class="card-content">
-          <i class="fa-solid fa-network-wired" style="font-size: 50px"></i>
+          <i class="fa-solid fa-network-wired" style="font-size: 50px;cursor:hand;"></i>
           <h3 class="card-title">DevOps</h3>
         </div>
       </div>
 
       <div class="card">
         <div class="card-content">
-          <i class="fa-brands fa-js" style="font-size: 50px"></i>
+          <i class="fa-brands fa-js" style="font-size: 50px;cursor:hand;"></i>
           <h3 class="card-title">JavaScript</h3>
         </div>
       </div>
 
       <div class="card">
         <div class="card-content">
-          <i class="fa-brands fa-python" style="font-size: 50px"></i>
+          <i class="fa-brands fa-python" style="font-size: 50px;cursor:hand;"></i>
           <h3 class="card-title">Python</h3>
         </div>
       </div>
 
       <div class="card">
         <div class="card-content">
-          <i class="fa-brands fa-php" style="font-size: 50px"></i>
+          <i class="fa-brands fa-php" style="font-size: 50px;cursor:hand;"></i>
           <h3 class="card-title">Php</h3>
         </div>
       </div>
 
       <div class="card">
         <div class="card-content">
-          <i class="fa-brands fa-linux" style="font-size: 50px"></i>
+          <i class="fa-brands fa-linux" style="font-size: 50px;cursor:hand;"></i>
           <h3 class="card-title">Linux</h3>
         </div>
       </div>
     </div>
 
     {% include 'footer.html' %}
-    <script>
-      var socket = io.connect("http://" + document.domain + ":" + location.port);
-      socket.on("my_response", function (data) {
-        document.getElementById("message").innerHTML = data.data;
-      });
-    </script>
   </body>
 </html>
