@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include 'imports.html' %}
+    <style>
+        .main-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            font-family: Arial, sans-serif;
+        }
+
+        #form-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+
+        #form-container h2 {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        #form-container input[type="text"],
+        #form-container input[type="password"],
+        #form-container textarea {
+            width: 100%;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 11px;
+            resize: vertical;
+        }
+
+        #form-container #btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        #form-container #btn-container button {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            border-radius: 11px;
+            background-color: #fff;
+            color: #002147;
+            cursor: pointer;
+        }
+
+        #form-container #btn-container button:hover {
+            background-color: #fff;
+        }
+
+        #form-container #btn-container button:focus {
+            outline: none;
+        }
+
+        #form-container #centered-text {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        #form-container #full-width-text {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        #form-container #full-width-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 11px;
+            background-color: #fff;
+            color: #002147;
+            cursor: pointer;
+        }
+
+        #form-container #full-width-btn:hover {
+            background-color: #fff;
+        }
+
+        #form-container #full-width-btn:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" style="font-size: 30px;"><i style="font-size: 30px;" class="fa-solid fa-arrow-left"></i>&nbsp;Back</a>
+    <div class="main-form">
+    <div id="form-container">
+        <h2 style="font-size: 20px;">Sign Up</h2>
+        <div>
+            <div id="btn-container">
+                <button class="btn btn-outline"><i class="fa-brands fa-google"></i> &nbsp;with Google</button>
+                <button class="btn"><i class="fa-brands fa-facebook"></i>&nbsp;with Facebook</button>
+            </div>
+        </div>
+        <p style="margin-bottom: 20px;font-size: 13px;">or signup with email and password</p>
+        <input class="input input-bordered" type="text" placeholder="Enter Email" style="padding: 10px;outline:none;">
+        <input type="password" placeholder="Enter Password" class="input input-bordered" style="padding: 10px;outline:none;">
+        <p id="full-width-text" style="font-size: 13px;">By signing up, you confirm that you've read and accepted our <a style="font-size: 13px;text-decoration: underline;">Terms of Service</a> and <a style="font-size: 13px;text-decoration: underline;">Privacy Policy</a></p>
+        <button id="full-width-btn" class="btn" style="margin-bottom: 20px;margin-top: 20px;background-color: rgb(0, 105, 255);color: #fff;">Sign Up</button>
+        
+        <p id="centered-text" style="font-size: 13px;">Already have an account? <a style="font-size: 13px;text-decoration: underline;">Login</a></p>
+    </div>
+    </div>
+    
+</body>
+</html>

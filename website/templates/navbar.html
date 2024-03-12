@@ -1,0 +1,84 @@
+{% include 'imports.html' %}
+
+<div class="navbar bg-base-100 flex justify-center items-center">
+  <!-- Logo and dropdown -->
+  <div class="navbar-start flex items-center space-x-2">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16"
+          />
+        </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box w-80"
+      >
+        <li><a>Home</a></li>
+        <li>
+          <a>En</a>
+          <ul class="p-2">
+            <li><a>Fr</a></li>
+            <li><a>Es</a></li>
+            <li><a>Zh</a></li>
+          </ul>
+        </li>
+        <li><a>Connect</a></li>
+      </ul>
+    </div>
+    <a id="logo">Carlano</a>
+  </div>
+
+  <!-- Centered menu -->
+  <div class="navbar-center hidden lg:flex">
+    <ul tabindex="0" class="menu menu-horizontal px-1">
+      <li><a>Home</a></li>
+      <li>
+        <details>
+          <summary><i class="fas fa-globe"></i>En</summary>
+          <ul class="w-full">
+            <li><a>Fr</a></li>
+            <hr />
+            <li><a>Es</a></li>
+            <hr />
+            <li><a>Zh</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a>Connect</a></li>
+    </ul>
+  </div>
+
+  <!-- Buttons on the right -->
+  <div class="navbar-end flex items-center space-x-3">
+    <a
+      class="btn p-3"
+      id="routing-link"
+      style="border-radius: 14px; padding: 0px 23px; font-size: 15px"
+      >Log in</a
+    >
+    <a
+      href="auth/Registration.action"
+      class="btn"
+      id="routing-link"
+      style="
+        background-color: rgb(0, 105, 255);
+        border-radius: 14px;
+        color: #fff;
+        padding: 0px 23px;
+        font-size: 15px;
+      "
+      >Sign up</a
+    >
+  </div>
+</div>

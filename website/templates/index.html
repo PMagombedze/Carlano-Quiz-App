@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carlano - Quiz App</title>
+  </head>
+  <body>
+    {% include 'imports.html' %} {% include 'navbar.html' %}
+
+    <!-----hero----->
+
+    <h1 class="centered-text" align="center">Test Your Knowledge</h1>
+    <p align="center" style="margin-bottom: 60px">
+      Dive into the Ultimate Quiz Experience!
+    </p>
+
+    <!------courses---->
+
+    <div class="card-container">
+      <div class="card">
+        <div class="card-content">
+          <i class="fa-brands fa-wordpress" style="font-size: 50px"></i>
+          <h3 class="card-title" align="center">WordPress</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <i class="fa-solid fa-network-wired" style="font-size: 50px"></i>
+          <h3 class="card-title">DevOps</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <i class="fa-brands fa-js" style="font-size: 50px"></i>
+          <h3 class="card-title">JavaScript</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <i class="fa-brands fa-python" style="font-size: 50px"></i>
+          <h3 class="card-title">Python</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <i class="fa-brands fa-php" style="font-size: 50px"></i>
+          <h3 class="card-title">Php</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <i class="fa-brands fa-linux" style="font-size: 50px"></i>
+          <h3 class="card-title">Linux</h3>
+        </div>
+      </div>
+    </div>
+
+    {% include 'footer.html' %}
+    <script>
+      var socket = io.connect("http://" + document.domain + ":" + location.port);
+      socket.on("my_response", function (data) {
+        document.getElementById("message").innerHTML = data.data;
+      });
+    </script>
+  </body>
+</html>
