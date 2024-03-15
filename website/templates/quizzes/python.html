@@ -1,0 +1,147 @@
+{% include 'imports.html' %}
+
+<div class="navbar bg-base-100 flex justify-center items-center">
+  <!-- Logo and dropdown -->
+  <div class="navbar-start flex items-center space-x-2">
+    <a id="logo">Carlano</a>
+  </div>
+
+  <!-- Buttons on the right -->
+  <div class="navbar-end flex items-center space-x-1">
+      <div class="form-control">
+        <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+      </div>
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          </div>
+        </div>
+        <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+          <li>
+            <a class="justify-between">
+              Profile
+            </a>
+          </li>
+          <li><a>Settings</a></li>
+          <li><a>Logout</a></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+<h1 class="centered-text" align="center">Python Quiz</h1>
+
+<style>
+    .main-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      font-family: Arial, sans-serif;
+    }
+
+    #form-container {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      background-color: #ffffff;
+    }
+
+    #form-container h2 {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    #form-container input[type="text"],
+    #form-container input[type="password"],
+    #form-container textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      border: 1px solid #ffffff;
+      border-radius: 11px;
+      resize: vertical;
+    }
+
+    #form-container #btn-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    #form-container #btn-container button {
+      width: 48%;
+      padding: 12px;
+      border: none;
+      border-radius: 11px;
+      background-color: #fff;
+      color: #002147;
+      cursor: pointer;
+    }
+
+    #form-container #btn-container button:hover {
+      background-color: #fff;
+    }
+
+    #form-container #btn-container button:focus {
+      outline: none;
+    }
+
+    #form-container #centered-text {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    #form-container #full-width-text {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    #form-container #full-width-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 11px;
+      background-color: #fff;
+      color: #002147;
+      cursor: pointer;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    #form-container #full-width-btn:hover {
+      background-color: #fff;
+    }
+
+    #form-container #full-width-btn:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <form class="main-form">
+    <div id="form-container">
+        <p style="margin-bottom: 20px;font-size: 13px;">Question 1 out of 20</p>
+
+      <p id="full-width-btn" class="my-element bg-gray-200 p-4 rounded-md shadow-sm" style="margin-bottom: 20px;margin-top: 20px;background-color: rgb(255, 255, 255);color: #002147;">
+        <input type="radio" name="radio-1" class="radio"  />
+    </p>
+    <p id="full-width-btn" class="my-element bg-gray-200 p-4 rounded-md shadow-sm" style="margin-bottom: 20px;margin-top: 20px;background-color: rgb(255, 255, 255);color: #002147;">
+        <input type="radio" name="radio-1" class="radio"  />
+    </p>
+    <p id="full-width-btn" class="my-element bg-gray-200 p-4 rounded-md shadow-sm" style="margin-bottom: 20px;margin-top: 20px;background-color: rgb(255, 255, 255);color: #002147;">
+        <input type="radio" name="radio-1" class="radio"  />
+    </p>
+    <p id="full-width-btn" style="margin-bottom: 20px;margin-top: 20px;background-color: rgb(255, 255, 255);color: #002147;">
+        <input type="radio" name="radio-1" class="radio"  />
+    </p>
+    <button id="full-width-btn" class="btn" style="margin-bottom: 20px;margin-top: 20px;background-color: rgb(0, 105, 255);color: #fff;font-size: larger;">Next <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+      </svg></button>
+
+    </div>
+  </form>
+
+
+{% include 'footer.html' %}

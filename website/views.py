@@ -12,3 +12,7 @@ views = Blueprint("views", __name__)
 def home():
     """home template"""
     return render_template('index.html')
+
+@views.route('/python')
+def func():
+    return render_template('quizzes/python.html')
