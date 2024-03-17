@@ -2,7 +2,8 @@
 views
 """
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, make_response
+from htmlmin import minify
 
 views = Blueprint("views", __name__)
 
@@ -11,8 +12,19 @@ views = Blueprint("views", __name__)
 @views.route('/home')
 def home():
     """home template"""
-    return render_template('index.html')
+    html = render_template('index.html')
+    minified_html = minify(html)
+    response = make_response(minified_html)
+    response.headers['Content-Disposition'] = 'inline'
+
+    return response
+
 
 @views.route('/python')
 def func():
-    return render_template('quizzes/python.html')
+    html = render_template('quizzes/python.html')
+    minified_html = minify(html)
+    response = make_response(minified_html)
+    response.headers['Content-Disposition'] = 'inline'
+
+    return response

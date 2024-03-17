@@ -2,7 +2,7 @@
 initializing the flask app
 """
 
-from flask import Flask
+from flask import Flask, render_template
 from EasyFlaskRecaptcha import ReCaptcha
 from flask_restful import Api, Resource, reqparse
 from flask_sqlalchemy import SQLAlchemy
@@ -15,11 +15,19 @@ def create_app():
     from .views import views
     from .auth import auth
 
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('error/client.html'), 404
+
+    @app.errorhandler(500)
+    def internal_server_error(e):
+        return render_template('error/server.html'), 500
+
     app.config.from_object(Config)
     app.config.update(dict(
     GOOGLE_RECAPTCHA_ENABLED=True,
-    GOOGLE_RECAPTCHA_SITE_KEY="6Lf74pUpXXXXXXXXXXXXXXXi012KXXXX7KB-31XXXH",
-    GOOGLE_RECAPTCHA_SECRET_KEY="6LXXXXXXXXXXAFX-ZAXXXXXGSd-y5g0o-JZXXXXB",
+    GOOGLE_RECAPTCHA_SITE_KEY="6LdsZ5opAAAAAHQUPPtHtrjHl_TCe9acD5VLI6O6",
+    GOOGLE_RECAPTCHA_SECRET_KEY="6LdsZ5opAAAAAOr4Rf2gI8yqtQE6TbPtu6ykwUDs",
     GOOGLE_RECAPTCHA_THEME = "red",
     GOOGLE_RECAPTCHA_TYPE = "image",
     GOOGLE_RECAPTCHA_SIZE = "normal",

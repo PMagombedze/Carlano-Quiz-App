@@ -3,7 +3,8 @@ Authentication
 """
 
 # primary key use uuid.uuid4()
-from flask import Blueprint, render_template
+from flask import render_template, redirect, url_for, request, Blueprint
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required
 
 auth = Blueprint("auth", __name__)
 
