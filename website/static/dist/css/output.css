@@ -1724,6 +1724,20 @@ html {
   }
 }
 
+.btn-md {
+  height: 3rem;
+  min-height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-square:where(.btn-md) {
+  height: 3rem;
+  width: 3rem;
+  padding: 0px;
+}
+
 .btn-circle:where(.btn-xs) {
   height: 1.5rem;
   width: 1.5rem;
@@ -1988,6 +2002,13 @@ html {
 
 .outline {
   outline-style: solid;
+}
+
+@media not all and (min-width: 768px) {
+  .max-md\:text-black {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+  }
 }
 
 @media (min-width: 768px) {
