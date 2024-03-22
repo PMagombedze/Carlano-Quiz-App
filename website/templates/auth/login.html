@@ -98,7 +98,7 @@
       ><i style="font-size: 30px" class="fa-solid fa-arrow-left"></i
       >&nbsp;Back</a
     >
-    <form class="main-form" action="/login" method="post">
+    <form class="main-form" method="post">
       <div id="form-container">
         <h2 style="font-size: 20px">Hi, Welcome Back!</h2>
         <div>
@@ -142,10 +142,11 @@
         <input
           class="input input-bordered"
           type="text"
-          name="username"
+          name="email"
           id="username"
           placeholder="Enter Email"
           style="padding: 10px; outline: none"
+          required
         />
         <input
           type="password"
@@ -154,6 +155,7 @@
           placeholder="Enter Password"
           class="input input-bordered"
           style="padding: 10px; outline: none"
+          required
         />
         <input type="submit"
           id="full-width-btn"

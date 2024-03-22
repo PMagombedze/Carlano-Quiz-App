@@ -93,7 +93,10 @@
       ><i style="font-size: 30px" class="fa-solid fa-arrow-left"></i
       >&nbsp;Back</a
     >
-    <form class="main-form" action="/signup" method="post">
+
+    {% include 'message.html' %}
+    
+    <form class="main-form" method="post">
       <div id="form-container">
         <h2 style="font-size: 20px">Sign Up</h2>
         <div>
@@ -111,10 +114,11 @@
         <input
           class="input input-bordered"
           type="text"
-          id="username"
+          id="email"
           name="username"
           placeholder="Enter Email"
           style="padding: 10px; outline: none"
+          required
         />
         <input
           type="password"
@@ -123,19 +127,19 @@
           placeholder="Enter Password"
           class="input input-bordered"
           style="padding: 10px; outline: none"
+          required
         />
         <p id="full-width-text" style="font-size: 13px">
           By signing up, you confirm that you've read and accepted our
-          <a style="font-size: 13px; text-decoration: underline"
+          <a href="" style="font-size: 13px; text-decoration: underline"
             >Terms of Service</a
           >
           and
-          <a style="font-size: 13px; text-decoration: underline"
+          <a href="" style="font-size: 13px; text-decoration: underline"
             >Privacy Policy</a
           >
         </p>
 
-        {{ recaptcha }}
         <input type="submit"
         value="Sign up"
           id="full-width-btn"

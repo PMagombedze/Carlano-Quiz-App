@@ -4,6 +4,7 @@ views
 
 from flask import Blueprint, render_template, make_response
 from htmlmin import minify
+from flask_login import login_required, current_user
 
 views = Blueprint("views", __name__)
 
@@ -29,3 +30,8 @@ def func():
 
     return response
 
+
+@views.route('/quiz/dashboard')
+@login_required
+def dashboard():
+    return render_template('quizzes/dashboard.html', user=current_user)

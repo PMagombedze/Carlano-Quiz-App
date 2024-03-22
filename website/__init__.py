@@ -7,10 +7,20 @@ from EasyFlaskRecaptcha import ReCaptcha
 from flask_restful import Api, Resource, reqparse
 from flask_sqlalchemy import SQLAlchemy
 from .config import Config
+from flask_login import LoginManager
+from flask_basicauth import BasicAuth
+
+
+db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
     recaptcha = ReCaptcha(app)
+
+    app.config['BASIC_AUTH_USERNAME'] = 'john'
+    app.config['BASIC_AUTH_PASSWORD'] = 'matrix'
+
+    basic_auth = BasicAuth(app)
 
     from .views import views
     from .auth import auth
@@ -35,8 +45,8 @@ def create_app():
     GOOGLE_RECAPTCHA_RTABINDEX = 10,
     ))
     recaptcha.init_app(app)
-    db = SQLAlchemy(app)
     api = Api(app)
+    db.init_app(app)
 
     @app.route("/submit", methods=["POST"])
     def submit():
@@ -51,16 +61,15 @@ def create_app():
         options = db.Column(db.String(100))
         correctAnswer = db.Column(db.Integer)
 
-    with app.app_context():
-        db.create_all()
-
     class ItemResource(Resource):
+        @basic_auth.required
         def get(self, item_id):
             item = Item.query.get(item_id)
             if item:
                 return {'questionId': item.questionId, 'text': item.text, 'options': item.options, 'correct_answer': item.correctAnswer}
             return {'message': 'Quiz not found'}, 404
 
+        @basic_auth.required
         def put(self, item_id):
             parser = reqparse.RequestParser()
             parser.add_argument('text')
@@ -80,6 +89,7 @@ def create_app():
             db.session.commit()
             return {'questionId': item.questionId, 'text': item.text, 'options': item.options, 'correct_answer': item.correctAnswer}, 201
 
+        @basic_auth.required
         def delete(self, item_id):
             item = Item.query.get(item_id)
             if item:
@@ -87,11 +97,24 @@ def create_app():
                 db.session.commit()
                 return {'message': 'Quiz deleted'}
             return {'message': 'Quiz not found'}, 404
-
     api.add_resource(ItemResource, '/api/v1/<int:item_id>')
 
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
+
+    from .models import User
+
+    
+    with app.app_context():
+        db.create_all()
+
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
 
     return app
