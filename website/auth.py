@@ -1,14 +1,8 @@
-"""
-aunthentication (sign/signup/logout)
-"""
-
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from .models import User
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask_bcrypt import Bcrypt
 from . import db
 from flask_login import login_user, logout_user, login_required, current_user
-
-
 import re
 
 commonPasswords = [
@@ -88,6 +82,7 @@ def is_secure_password(password):
     return True
 
 auth = Blueprint("auth", __name__)
+bcrypt = Bcrypt()
 
 @auth.route('auth/Login.action', methods=['GET', 'POST'])
 def login():
@@ -97,7 +92,7 @@ def login():
 
         user = User.query.filter_by(email=email).first()
         if user:
-            if check_password_hash(user.password, password):
+            if bcrypt.check_password_hash(user.password, password):
                 login_user(user, remember=True)
                 flash('Logged in successfully!', category='success')
                 return redirect(url_for('views.dashboard'))
@@ -126,7 +121,8 @@ def signup():
         elif is_secure_password(password) == False:
             flash('Password should contain at least a symbol and uppercase characters', category='warning')
         else:
-            new_user = User(email=email, password=generate_password_hash(password, method='sha256'))
+            password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
+            new_user = User(email=email, password=password_hash)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)

@@ -26,7 +26,7 @@
         margin-bottom: 10px;
       }
 
-      #form-container input[type="text"],
+      #form-container input[type="email"],
       #form-container input[type="password"],
       #form-container textarea {
         width: 100%;
@@ -98,6 +98,7 @@
       ><i style="font-size: 30px" class="fa-solid fa-arrow-left"></i
       >&nbsp;Back</a
     >
+    {% include 'message.html' %}
     <form class="main-form" method="post">
       <div id="form-container">
         <h2 style="font-size: 20px">Hi, Welcome Back!</h2>
@@ -141,9 +142,9 @@
         </p>
         <input
           class="input input-bordered"
-          type="text"
+          type="email"
           name="email"
-          id="username"
+          id="email"
           placeholder="Enter Email"
           style="padding: 10px; outline: none"
           required
