@@ -1,43 +1,77 @@
 import re
 
-def password_check(password):
-    """
-    Verify the strength of 'password'
-    Returns a dict indicating the wrong criteria
-    A password is considered strong if:
-        8 characters length or more
-        1 digit or more
-        1 symbol or more
-        1 uppercase letter or more
-        1 lowercase letter or more
-    """
+commonPasswords = [
+    123456,
+    'password',
+    123456789,
+    12345678,
+    12345,
+    1234567,
+    'admin',
+    123123,
+    'qwerty',
+    'abc123',
+    'letmein',
+    'monkey',
+    111111,
+    'password1',
+    'qwerty123',
+    'dragon',
+    1234,
+    'baseball',
+    'iloveyou',
+    'trustno1',
+    'sunshine',
+    'princess',
+    'football',
+    'welcome',
+    'shadow',
+    'superman',
+    'michael',
+    'ninja',
+    'mustang',
+    'jessica',
+    'charlie',
+    'ashley',
+    'bailey',
+    'passw0rd',
+    'master',
+    'love',
+    'hello',
+    'freedom',
+    'whatever',
+    'nicole',
+    'jordan',
+    'cameron',
+    'secret',
+    'summer',
+    '1q2w3e4r',
+    'zxcvbnm',
+    'starwars',
+    'computer',
+    'taylor',
+    'startrek',
+    123456,
+    123456789,
+    'qwerty',
+    'password',
+    12345,
+    'qwerty123',
+    '1q2w3e',
+    12345678,
+    111111,
+    1234567890
+]
 
-    length_error = len(password) < 8
-
-    digit_error = re.search(r"\\d", password) is None
-
-    uppercase_error = re.search(r"[A-Z]", password) is None
-
-    lowercase_error = re.search(r"[a-z]", password) is None
-
-    symbol_error = re.search(r"[ !#$%&'()*+,-./[\\]^_`{|}~]", password) is None
-
-    password_ok = not (length_error or digit_error or uppercase_error or 
-                       lowercase_error or symbol_error)
-    
-    return {
-        'password_ok' : password_ok,
-        'length_error' : length_error,
-        'digit_error' : digit_error,
-        'uppercase_error' : uppercase_error,
-        'lowercase_error' : lowercase_error,
-        'symbol_error' : symbol_error,
-    }
-
-password = "MySecureP@ssw0rd!"
-password_strength = password_check(password)
-
-if password_strength['password_ok']:
-    print("Password is strong.")
-else:
-    print("Password is weak.")
+def is_secure_password(password):
+    if len(password) < 8:
+        return False
+    if not re.search(r"\d",password):
+        return False
+    if not re.search(r"[A-Z]", password):
+        return False
+    if not re.search(r"[a-z]",password):
+        return False
+    if password in commonPasswords:
+        return False    
+    return True

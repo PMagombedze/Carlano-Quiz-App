@@ -28,3 +28,4 @@ def func():
     response.headers['Content-Disposition'] = 'inline'
 
     return response
+

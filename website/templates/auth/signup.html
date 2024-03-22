@@ -93,7 +93,7 @@
       ><i style="font-size: 30px" class="fa-solid fa-arrow-left"></i
       >&nbsp;Back</a
     >
-    <form class="main-form" action="/signup">
+    <form class="main-form" action="/signup" method="post">
       <div id="form-container">
         <h2 style="font-size: 20px">Sign Up</h2>
         <div>
@@ -111,11 +111,15 @@
         <input
           class="input input-bordered"
           type="text"
+          id="username"
+          name="username"
           placeholder="Enter Email"
           style="padding: 10px; outline: none"
         />
         <input
           type="password"
+          id="password"
+          name="password"
           placeholder="Enter Password"
           class="input input-bordered"
           style="padding: 10px; outline: none"
@@ -132,9 +136,8 @@
         </p>
 
         {{ recaptcha }}
-
-        [submit]
-        <button
+        <input type="submit"
+        value="Sign up"
           id="full-width-btn"
           class="btn"
           style="
@@ -144,8 +147,6 @@
             color: #fff;
           "
         >
-          Sign Up
-        </button>
         <hr style="padding-bottom:1px;margin-bottom: 20px;">
 
 

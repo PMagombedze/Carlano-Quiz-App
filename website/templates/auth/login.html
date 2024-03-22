@@ -98,7 +98,7 @@
       ><i style="font-size: 30px" class="fa-solid fa-arrow-left"></i
       >&nbsp;Back</a
     >
-    <form class="main-form" action="/login">
+    <form class="main-form" action="/login" method="post">
       <div id="form-container">
         <h2 style="font-size: 20px">Hi, Welcome Back!</h2>
         <div>
@@ -155,7 +155,7 @@
           class="input input-bordered"
           style="padding: 10px; outline: none"
         />
-        <button
+        <input type="submit"
           id="full-width-btn"
           class="btn btn-md rounded-md"
           style="
@@ -164,9 +164,8 @@
             background-color: rgb(0, 105, 255);
             color: #fff;
           "
+          value="Login"
         >
-          Login
-        </button>
         <p id="centered-text" style="font-size: 13px">
           <a
             href=""
