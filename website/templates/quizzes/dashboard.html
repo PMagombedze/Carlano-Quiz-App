@@ -1,1 +1,85 @@
+<body style="cursor: default;">
+  
+{% include 'imports.html' %}
+
+<div class="navbar bg-base-100 flex justify-center items-center">
+  <!-- Logo and dropdown -->
+  <div class="navbar-start flex items-center space-x-2">
+    <a id="logo" href="/">Carlano</a>
+  </div>
+
 {% include 'message.html' %}
+
+  <!-- Buttons on the right -->
+  <div class="navbar-end flex items-center space-x-1">
+      <div class="form-control">
+        <input type="text" placeholder="Search" class="input w-24 md:w-auto" style="border-bottom: 2px solid #002147;border-radius:0px;outline:none;" />
+      </div>
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          </div>
+        </div>
+        <ul tabindex="0" class="mt-3 z-[1] p-2 menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+          <li>
+            <a class="justify-between" style="font-size: 15px;">
+              Profile
+            </a>
+          </li>
+          <li><a style="font-size: 15px;">My Quizzes</a></li>
+          <li><a href="/logout" style="font-size: 15px;">Logout</a></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+
+<div class="card-container" style="margin-top: 100px;">
+  <div class="card">
+    <div class="card-content">
+      <i class="fa-brands fa-wordpress" style="font-size: 50px; cursor:hand;"></i>
+      <h3 class="card-title" align="center">WordPress</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <i class="fa-solid fa-network-wired" style="font-size: 50px;cursor:hand;"></i>
+      <h3 class="card-title">DevOps</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <i class="fa-brands fa-js" style="font-size: 50px;cursor:hand;"></i>
+      <h3 class="card-title">JavaScript</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <i class="fa-brands fa-python" style="font-size: 50px;cursor:hand;"></i>
+      <h3 class="card-title">Python</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <i class="fa-brands fa-php" style="font-size: 50px;cursor:hand;"></i>
+      <h3 class="card-title">Php</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <i class="fa-brands fa-linux" style="font-size: 50px;cursor:hand;"></i>
+      <h3 class="card-title">Linux</h3>
+    </div>
+  </div>
+</div>
+
+
+<h1 style="margin-top: 50px;">New Quizzes coming soon ..</h1>
+
+{% include 'footer.html' %}

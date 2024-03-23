@@ -17,8 +17,8 @@ def create_app():
     app = Flask(__name__)
     recaptcha = ReCaptcha(app)
 
-    app.config['BASIC_AUTH_USERNAME'] = 'john'
-    app.config['BASIC_AUTH_PASSWORD'] = 'matrix'
+    app.config['BASIC_AUTH_USERNAME'] = 'percy_magom'
+    app.config['BASIC_AUTH_PASSWORD'] = '6e9ffaebace7cb744324c0e8784a2c69'
 
     basic_auth = BasicAuth(app)
 
@@ -28,6 +28,10 @@ def create_app():
     @app.errorhandler(404)
     def page_not_found(e):
         return render_template('error/client.html'), 404
+    
+    @app.errorhandler(401)
+    def unauthorized(e):
+        return render_template('error/unauthorized.html'), 401
 
     @app.errorhandler(500)
     def internal_server_error(e):
