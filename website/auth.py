@@ -1,9 +1,23 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from .models import User
 from flask_bcrypt import Bcrypt
-from . import db
+from . import db, app
 from flask_login import login_user, logout_user, login_required, current_user
 import re
+from EasyFlaskRecaptcha import ReCaptcha
+
+recaptcha = ReCaptcha(app)
+app.config.update(dict(
+    GOOGLE_RECAPTCHA_ENABLED=True,
+    GOOGLE_RECAPTCHA_SITE_KEY="6LdsZ5opAAAAAHQUPPtHtrjHl_TCe9acD5VLI6O6",
+    GOOGLE_RECAPTCHA_SECRET_KEY="6LdsZ5opAAAAAOr4Rf2gI8yqtQE6TbPtu6ykwUDs",
+    GOOGLE_RECAPTCHA_THEME = "light",
+    GOOGLE_RECAPTCHA_TYPE = "image",
+    GOOGLE_RECAPTCHA_SIZE = "normal",
+    GOOGLE_RECAPTCHA_LANGUAGE = "en",
+    GOOGLE_RECAPTCHA_RTABINDEX = 15,
+))
+recaptcha.init_app(app)
 
 commonPasswords = [
     123456,
@@ -116,17 +130,21 @@ def signup():
         password = request.form.get('password')
 
         user = User.query.filter_by(email=email).first()
-        if user:
-            flash('Email already exists', category='error')
-        elif is_secure_password(password) == False:
-            flash('Password should contain at least a symbol and uppercase characters', category='warning')
+        if recaptcha.verify():
+            if user:
+                flash('Email already exists', category='error')
+            elif is_secure_password(password) == False:
+                flash('Password should contain at least a symbol and uppercase characters', category='warning')
+            else:
+                password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
+                new_user = User(email=email, password=password_hash)
+                db.session.add(new_user)
+                db.session.commit()
+                login_user(new_user, remember=True)
+                flash('Account created successfully', category='success')
+                return redirect(url_for('views.dashboard'))
         else:
-            password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
-            new_user = User(email=email, password=password_hash)
-            db.session.add(new_user)
-            db.session.commit()
-            login_user(new_user, remember=True)
-            flash('Account created successfully', category='success')
-            return redirect(url_for('views.dashboard'))
+            flash('Recaptcha failed', category='error')
+
 
     return render_template('/auth/signup.html', user=current_user)

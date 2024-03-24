@@ -3,7 +3,6 @@ initializing the flask app
 """
 
 from flask import Flask, render_template
-from EasyFlaskRecaptcha import ReCaptcha
 from flask_restful import Api, Resource, reqparse
 from flask_sqlalchemy import SQLAlchemy
 from .config import Config
@@ -12,10 +11,10 @@ from flask_basicauth import BasicAuth
 
 
 db = SQLAlchemy()
+app = Flask(__name__)
 
 def create_app():
-    app = Flask(__name__)
-    recaptcha = ReCaptcha(app)
+    #app = Flask(__name__)
 
     app.config['BASIC_AUTH_USERNAME'] = 'percy_magom'
     app.config['BASIC_AUTH_PASSWORD'] = '6e9ffaebace7cb744324c0e8784a2c69'
@@ -38,26 +37,8 @@ def create_app():
         return render_template('error/server.html'), 500
 
     app.config.from_object(Config)
-    app.config.update(dict(
-    GOOGLE_RECAPTCHA_ENABLED=True,
-    GOOGLE_RECAPTCHA_SITE_KEY="6LdsZ5opAAAAAHQUPPtHtrjHl_TCe9acD5VLI6O6",
-    GOOGLE_RECAPTCHA_SECRET_KEY="6LdsZ5opAAAAAOr4Rf2gI8yqtQE6TbPtu6ykwUDs",
-    GOOGLE_RECAPTCHA_THEME = "red",
-    GOOGLE_RECAPTCHA_TYPE = "image",
-    GOOGLE_RECAPTCHA_SIZE = "normal",
-    GOOGLE_RECAPTCHA_LANGUAGE = "en",
-    GOOGLE_RECAPTCHA_RTABINDEX = 10,
-    ))
-    recaptcha.init_app(app)
     api = Api(app)
     db.init_app(app)
-
-    @app.route("/submit", methods=["POST"])
-    def submit():
-        if recaptcha.verify():
-            print("SUCCESS")    
-        else:
-            print("FAILED")
 
     class Item(db.Model):
         questionId = db.Column(db.Integer, primary_key=True)
