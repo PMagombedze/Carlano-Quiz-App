@@ -34,4 +34,9 @@ def func():
 @views.route('/quiz/dashboard')
 @login_required
 def dashboard():
-    return render_template('quizzes/dashboard.html', user=current_user)
+    html = render_template('quizzes/dashboard.html', user=current_user)
+    minified_html = minify(html)
+    response = make_response(minified_html)
+    response.headers['Content-Disposition'] = 'inline'
+
+    return response

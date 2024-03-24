@@ -8,8 +8,6 @@
     <a id="logo" href="/">Carlano</a>
   </div>
 
-{% include 'message.html' %}
-
   <!-- Buttons on the right -->
   <div class="navbar-end flex items-center space-x-1">
       <div class="form-control">
@@ -21,7 +19,7 @@
             <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
           </div>
         </div>
-        <ul tabindex="0" class="mt-3 z-[1] p-2 menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+        <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
           <li>
             <a class="justify-between" style="font-size: 15px;">
               Profile
@@ -34,52 +32,102 @@
   </div>
 </div>
 
+{% include 'message.html' %}
 
-<div class="card-container" style="margin-top: 100px;">
-  <div class="card">
-    <div class="card-content">
-      <i class="fa-brands fa-wordpress" style="font-size: 50px; cursor:hand;"></i>
-      <h3 class="card-title" align="center">WordPress</h3>
+<style>
+  .card-container1 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card1 {
+    flex-basis: 30%; /* Adjust the width of the card as needed */
+    margin: 10px; /* Adjust the margin between cards as needed */
+    display: flex;
+    align-items: center;
+    border-radius: 14px;
+  }
+  
+  .left-side {
+    background-color: #002147;
+    flex-basis: 30%; /* Adjust the width of the left side as needed */
+    height: 200px; /* Adjust the height of the card as needed */
+    border-radius: 14px;
+  }
+  
+  .right-side {
+    flex-grow: 1;
+    padding: 20px; /* Adjust the padding as needed */
+  }
+  
+  h2, p {
+    text-align: center;
+  }
+</style>
+
+<div class="card-container1" style="margin-top: 30px;">
+  <div class="card1 shadow">
+    <div class="left-side">
+      <i class="fa-brands fa-linux" style="font-size: 50px;cursor:hand;color:white;"></i>
+    </div>
+    <div class="right-side">
+      <h2>Centered Text 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-content">
-      <i class="fa-solid fa-network-wired" style="font-size: 50px;cursor:hand;"></i>
-      <h3 class="card-title">DevOps</h3>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-content">
-      <i class="fa-brands fa-js" style="font-size: 50px;cursor:hand;"></i>
-      <h3 class="card-title">JavaScript</h3>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-content">
-      <i class="fa-brands fa-python" style="font-size: 50px;cursor:hand;"></i>
-      <h3 class="card-title">Python</h3>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-content">
+  <div class="card1 shadow">
+    <div class="left-side">
       <i class="fa-brands fa-php" style="font-size: 50px;cursor:hand;"></i>
-      <h3 class="card-title">Php</h3>
+    </div>
+    <div class="right-side">
+      <h2>Centered Text 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
   </div>
-
-  <div class="card">
-    <div class="card-content">
-      <i class="fa-brands fa-linux" style="font-size: 50px;cursor:hand;"></i>
-      <h3 class="card-title">Linux</h3>
+  <div class="card1 shadow">
+    <div class="left-side">
+      <i class="fa-brands fa-python" style="font-size: 50px;cursor:hand;"></i>
+    </div>
+    <div class="right-side">
+      <h2>Centered Text 3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
   </div>
 </div>
 
 
-<h1 style="margin-top: 50px;">New Quizzes coming soon ..</h1>
+
+<div class="card-container1">
+  <div class="card1 shadow">
+    <div class="left-side">
+      <i class="fa-brands fa-wordpress" style="font-size: 50px; cursor:hand;"></i>
+    </div>
+    <div class="right-side">
+      <h2>Centered Text 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+  <div class="card1 shadow">
+    <div class="left-side">
+      <i class="fa-solid fa-network-wired" style="font-size: 50px;cursor:hand;"></i>
+
+    </div>
+    <div class="right-side">
+      <h2>Centered Text 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+  <div class="card1 shadow">
+    <div class="left-side">
+      <i class="fa-brands fa-js" style="font-size: 50px;cursor:hand;color:white;"></i>
+    </div>
+    <div class="right-side">
+      <h2>Centered Text 3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+</div>
+
 
 {% include 'footer.html' %}
