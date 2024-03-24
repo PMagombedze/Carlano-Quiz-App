@@ -110,6 +110,7 @@ questions = [
     }
 ]
 
+course = "Python"
 
 @pyth.route('quiz/quizzes/python', methods=["GET", "POST"])
 @login_required
@@ -132,10 +133,10 @@ def quiz():
         if question_index >= len(questions):
             return redirect(url_for("pyth.show_score"))
 
-        return render_template("quizzes/python.html", question=questions[question_index], question_index=question_index, score=session["score"])
+        return render_template("quizzes/python.html", question=questions[question_index], question_index=question_index, score=session["score"], course=course)
 
     session["score"] = 0
-    return render_template("quizzes/python.html", question=questions[0], question_index=0, score=session["score"])
+    return render_template("quizzes/python.html", question=questions[0], question_index=0, score=session["score"], course=course)
 
 
 @pyth.route("/score")

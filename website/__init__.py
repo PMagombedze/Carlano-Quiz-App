@@ -24,6 +24,11 @@ def create_app():
     from .views import views
     from .auth import auth
     from .pyth import pyth
+    from .javascript import javascript
+    from .linux import linux
+    from .wordpress import wordpress
+    from .devops import devops
+    from .php import php
 
     @app.errorhandler(404)
     def page_not_found(e):
@@ -89,6 +94,11 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(pyth, url_prefix='/')
+    app.register_blueprint(javascript, url_prefix='/')
+    app.register_blueprint(linux, url_prefix='/')
+    app.register_blueprint(wordpress, url_prefix='/')
+    app.register_blueprint(devops, url_prefix='/')
+    app.register_blueprint(php, url_prefix='/')
 
     from .models import User
 
