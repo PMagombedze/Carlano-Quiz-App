@@ -1,0 +1,27 @@
+{% include 'imports.html' %}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<h1 style="display: none;">{{ score }}</h1>
+<script>
+    const data = "{{ score }}"
+    if (data == 20) {
+        swal("Good job!", `You got a perfect score ${data}/20`, "success").then((value) => {
+            window.location.replace("http://127.0.0.1:5000/quiz/dashboard");
+          });
+    }
+    else {
+        swal("Try again", `You got some questions wrong ${data}/20`, "error").then((value) => {
+            window.location.replace("http://127.0.0.1:5000/quiz/dashboard");
+          });
+    }
+  
+  document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && event.shiftKey && event.key === "I") {
+      event.preventDefault();
+    }
+    event.preventDefault();
+  });
+</script>

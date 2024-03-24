@@ -15,7 +15,7 @@ app.config.update(dict(
     GOOGLE_RECAPTCHA_TYPE = "image",
     GOOGLE_RECAPTCHA_SIZE = "normal",
     GOOGLE_RECAPTCHA_LANGUAGE = "en",
-    GOOGLE_RECAPTCHA_RTABINDEX = 15,
+    GOOGLE_RECAPTCHA_RTABINDEX = 10,
 ))
 recaptcha.init_app(app)
 
