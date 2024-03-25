@@ -4,7 +4,7 @@ flask app configuration
 
 class Config:
     SECRET_KEY = "4e1441cb1898088837272ff8543c0e2418c7488cb6b4a7d61352af6d8df13b430699e499b32c11ad2582c74a129f36b66fc617726329d97b1f4022b5e822ba0a"
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///items.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///database.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     RECAPTCHA_SITE_KEY = "6LdsZ5opAAAAAHQUPPtHtrjHl_TCe9acD5VLI6O6"
     RECAPTCHA_SECRET_KEY = "6LdsZ5opAAAAAOr4Rf2gI8yqtQE6TbPtu6ykwUDs"
@@ -12,3 +12,8 @@ class Config:
     CAPTCHA_LENGTH = 5 
     CAPTCHA_WIDTH = 160
     CAPTCHA_HEIGHT = 60
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = False
+    MAIL_USERNAME = 'carlano.tech@gmail.com'
+    MAIL_PASSWORD = ''
