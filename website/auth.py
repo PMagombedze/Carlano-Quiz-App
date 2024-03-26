@@ -5,6 +5,10 @@ from . import db, app
 from flask_login import login_user, logout_user, login_required, current_user
 import re
 from EasyFlaskRecaptcha import ReCaptcha
+from flask_limiter import Limiter
+
+
+limiter = Limiter(app)
 
 recaptcha = ReCaptcha(app)
 app.config.update(dict(
@@ -99,6 +103,7 @@ auth = Blueprint("auth", __name__)
 bcrypt = Bcrypt()
 
 @auth.route('auth/Login.action', methods=['GET', 'POST'])
+@limiter.limit("10/minute")
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
