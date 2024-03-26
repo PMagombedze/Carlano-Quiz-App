@@ -1,5 +1,4 @@
 import unittest
-from flask import
 from flask_testing import TestCase
 from website import auth, db, app, models
 
