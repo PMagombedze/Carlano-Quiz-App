@@ -1,0 +1,131 @@
+<body style="cursor: default;">
+  
+    {% include 'imports.html' %}
+    
+    <div class="navbar bg-base-100 flex justify-center items-center">
+      <!-- Logo and dropdown -->
+      <div class="navbar-start flex items-center space-x-2">
+        <a id="logo" href="/">Carlano</a>
+      </div>
+    
+      <!-- Buttons on the right -->
+      <div class="navbar-end flex items-center space-x-1">
+          <div class="form-control">
+            <input type="text" placeholder="Search" class="input w-24 md:w-auto" style="border-bottom: 2px solid #002147;border-radius:0px;outline:none;" />
+          </div>
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              </div>
+            </div>
+            <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+              <li>
+                <a class="justify-between" style="font-size: 15px;">
+                  Profile
+                </a>
+              </li>
+              <li><a style="font-size: 15px;">My Quizzes</a></li>
+              <li><a href="/logout" style="font-size: 15px;">Logout</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    
+    <style>
+      .card-container1 {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .card1 {
+        flex-basis: 30%; /* Adjust the width of the card as needed */
+        margin: 10px; /* Adjust the margin between cards as needed */
+        display: flex;
+        align-items: center;
+        border-radius: 14px;
+      }
+      
+      .left-side {
+        background-color: #f3f3f3;
+        flex-basis: 30%; /* Adjust the width of the left side as needed */
+        height: 160px; /* Adjust the height of the card as needed */
+        border-radius: 14px;
+      }
+      
+      .right-side {
+        flex-grow: 1;
+        padding: 20px; /* Adjust the padding as needed */
+      }
+      
+      h2, p {
+        text-align: center;
+      }
+    </style>
+    
+    <div class="card-container1" style="margin-top: 80px;">
+      <div class="card1 shadow">
+        <div class="left-side">
+          <i class="fa-brands fa-linux" style="font-size: 80px;cursor:hand;color:#002147;margin-top:40px;margin-left: 15px;"></i>
+        </div>
+        <div class="right-side">
+          <h2 style="font-size: x-large;">Linux</h2>
+          <p><a  href="quizzes/linux" style="text-decoration: underline;">Start Quiz ></a></p>
+        </div>
+      </div>
+    
+      <div class="card1 shadow">
+        <div class="left-side">
+          <i class="fa-brands fa-php" style="font-size: 80px;cursor:hand;color:#002147;margin-top:40px;margin-left:5px;"></i>
+        </div>
+        <div class="right-side">
+          <h2 style="font-size: x-large;">Php</h2>
+          <p><a href="quizzes/php" style="text-decoration: underline;">Start Quiz ></a></p>
+        </div>
+      </div>
+      <div class="card1 shadow">
+        <div class="left-side">
+          <i class="fa-brands fa-python" style="font-size: 80px;cursor:hand;color:#002147;margin-top:40px;margin-left:15px;"></i>
+        </div>
+        <div class="right-side">
+          <h2 style="font-size: x-large;">Python</h2>
+          <p><a href="quizzes/python" style="text-decoration: underline;">Start Quiz ></a></p>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="card-container1">
+      <div class="card1 shadow">
+        <div class="left-side">
+          <i class="fa-brands fa-wordpress" style="font-size: 80px;cursor:hand;color:#002147;margin-top:40px;margin-left:15px;"></i>
+        </div>
+        <div class="right-side">
+          <h2 style="font-size: x-large;">WordPress</h2>
+          <p><a href="quizzes/wordpress" style="text-decoration: underline;">Start Quiz ></a></p>
+        </div>
+      </div>
+      <div class="card1 shadow">
+        <div class="left-side">
+          <i class="fa-solid fa-network-wired" style="font-size: 80px;cursor:hand;color:#002147;margin-top:40px;margin-left:5px;"></i>
+    
+        </div>
+        <div class="right-side">
+          <h2 style="font-size: x-large;">DevOps</h2>
+          <p><a href="quizzes/devops" style="text-decoration: underline;">Start Quiz ></a></p>
+        </div>
+      </div>
+      <div class="card1 shadow">
+        <div class="left-side">
+          <i class="fa-brands fa-js" style="font-size: 80px;cursor:hand;color:#002147;margin-top:40px;margin-left:15px;"></i>
+        </div>
+        <div class="right-side">
+          <h2 style="font-size: x-large;">JavaScript</h2>
+          <p><a href="quizzes/javascript" style="text-decoration: underline;">Start Quiz ></a></p>
+        </div>
+      </div>
+    </div>
+    
+    
+    {% include 'footer.html' %}

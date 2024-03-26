@@ -2,7 +2,7 @@
 views
 """
 
-from flask import Blueprint, render_template, make_response
+from flask import Blueprint, render_template, make_response, request
 from htmlmin import minify
 from flask_login import login_required, current_user
 
@@ -34,9 +34,11 @@ def func():
 @views.route('/quiz/dashboard')
 @login_required
 def dashboard():
-    html = render_template('quizzes/dashboard.html', user=current_user)
-    minified_html = minify(html)
-    response = make_response(minified_html)
-    response.headers['Content-Disposition'] = 'inline'
+    referrer = request.referrer
 
-    return response
+    if referrer.endswith('/auth/Login.action'):
+        return render_template('quizzes/dashboard.html', user=current_user)
+    elif referrer.endswith('/quiz/quizzes/python'):
+        return "quizzes"
+    else:
+        return render_template('quizzes/dash_.html', user=current_user)
