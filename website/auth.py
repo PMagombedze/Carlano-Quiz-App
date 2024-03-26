@@ -115,7 +115,12 @@ def login():
         else:
             flash('Email does not exist', category='error')
 
-    return render_template('/auth/login.html', user=current_user)
+    referrer = request.referrer
+
+    if referrer.endswith('/'):
+        return render_template('auth/login.html', user=current_user)
+    else:
+        return render_template('auth/login_.html', user=current_user)
 
 @auth.route('/logout')
 @login_required
