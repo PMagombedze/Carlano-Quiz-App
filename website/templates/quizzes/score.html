@@ -6,12 +6,12 @@
     const data = "{{ score }}"
     if (data == 20) {
         swal("Good job!", `You got a perfect score ${data}/20`, "success").then((value) => {
-            window.location.replace("http://127.0.0.1:5000/quiz/dashboard");
+            window.location.replace("http://127.0.0.1:5000/quiz/dashboard_");
           });
     }
     else {
         swal("Try again", `You got some questions wrong ${data}/20`, "error").then((value) => {
-            window.location.replace("http://127.0.0.1:5000/quiz/dashboard");
+            window.location.replace("http://127.0.0.1:5000/quiz/dashboard_");
           });
     }
   

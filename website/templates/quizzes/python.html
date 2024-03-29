@@ -121,20 +121,19 @@
       <br>
       <button type="submit" class="btn" id="full-width-btn">Next&nbsp;<i class="fa-solid fa-arrow-right"
           style="font-size: large;"></i></button>
-  </form>
   {% with messages = get_flashed_messages() %}
   {% if messages %}
   <ul>
     {% for message in messages %}
-    <li style="color: rgb(102, 0, 128);animation: fadeOut 1.5s forwards;">{{ message }}</li>
+    <li style="color: rgb(102, 0, 128);animation: fadeOut 3s forwards;">{{ message }}</li>
     {% endfor %}
   </ul>
   {% endif %}
   {% endwith %}
-
+</div>
+</form>
 
   </div>
-  </form>
 
 
   {% include 'footer.html' %}

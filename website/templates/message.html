@@ -1,0 +1,97 @@
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  h3 {
+    font-family: Quicksand;
+  }
+  .alert-danger-alert {
+    width: 50%;
+    margin: 20px auto;
+    padding: 30px;
+    position: relative;
+    border-radius: 5px;
+    background-color: #ffedeb;
+  }
+  .close-danger {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-width: 1px;
+    background-color: #FF7F7F;
+    border-style: solid;
+    border-radius: 50%;
+    right: 15px;
+    top: 20px;
+    text-align: center;
+    font-size: 1.6em;
+    cursor: pointer;
+  }
+
+
+  .alert-success-alert {
+    width: 50%;
+    margin: 20px auto;
+    padding: 30px;
+    position: relative;
+    border-radius: 5px;
+    background-color: #e0ffff;
+  }
+  .close-success {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-width: 1px;
+    background-color: #1ee099;
+    border-style: solid;
+    border-radius: 50%;
+    right: 15px;
+    top: 20px;
+    text-align: center;
+    font-size: 1.6em;
+    cursor: pointer;
+  }
+
+  @keyframes fade-out {
+    0% { opacity: 1; }
+    90% { opacity: 0.7; }
+    100% { opacity: 0; display: none; }
+  }
+  
+  #fade-in-out {
+    animation: fade-out 2s linear forwards;
+  }
+</style>
+
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages
+%} {% for category, message in messages %} {% if category == 'success' %}
+
+<div class="alert-success-alert" id="fade-in-out">
+  <h3 style="color: #0f422f;">{{ message }}</h3>
+  <a class="close-success"><i class="fa-solid fa-check" style="font-size: 15pt; font-weight:bolder;color:white;margin-top:8px;"></i></a>
+</div>
+
+{% else %}
+
+<div class="alert-danger-alert" id="fade-in-out">
+  <h3 style="color: #660000">{{ message }}</h3>
+  <a class="close-danger"><i class="fa-solid fa-xmark" style="font-size: 15pt; font-weight:bolder;color:white;"></i></a>
+</div>
+
+{% endif %} {% endfor %} {% endif %} {% endwith %}
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script>
+  $(".close").click(function () {
+    $(this).parent(".alert").fadeOut();
+  });
+</script>

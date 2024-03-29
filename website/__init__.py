@@ -50,14 +50,15 @@ def create_app():
         questionId = db.Column(db.Integer, primary_key=True)
         text = db.Column(db.String(100))
         options = db.Column(db.String(100))
-        correct_answer = db.Column(db.Integer)
+        correctAnswer = db.Column(db.Integer)
+        category = db.Column(db.String(100))
 
     class ItemResource(Resource):
         @basic_auth.required
         def get(self, item_id):
             item = Item.query.get(item_id)
             if item:
-                return {'questionId': item.questionId, 'text': item.text, 'options': item.options, 'correct_answer': item.correct_answer}
+                return {'questionId': item.questionId, 'text': item.text, 'options': item.options, 'correct_answer': item.correctAnswer, 'category': item.category}
             return {'message': 'Quiz not found'}, 404
 
         @basic_auth.required
@@ -65,20 +66,22 @@ def create_app():
             parser = reqparse.RequestParser()
             parser.add_argument('text')
             parser.add_argument('options')
-            parser.add_argument('correct_answer')
+            parser.add_argument('correctAnswer')
+            parser.add_argument('category')
             args = parser.parse_args()
 
             item = Item.query.get(item_id)
             if item:
                 item.text = args['text']
                 item.options = args['options']
-                item.correct_answer = args['correct_answer']
+                item.correctAnswer = args['correctAnswer']
+                item.category = args['category']
             else:
-                item = Item(questionId=item_id, text=args['text'], options=args['options'], correct_answer=args['correct_answer'])
+                item = Item(questionId=item_id, text=args['text'], options=args['options'], correctAnswer=args['correctAnswer'], category=args['category'])
                 db.session.add(item)
 
             db.session.commit()
-            return {'questionId': item.questionId, 'text': item.text, 'options': item.options, 'correct_answer': item.correct_answer}, 201
+            return {'questionId': item.questionId, 'text': item.text, 'options': item.options, 'correct_answer': item.correctAnswer, 'category': item.category}, 201
 
         @basic_auth.required
         def delete(self, item_id):
