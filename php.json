@@ -1,0 +1,222 @@
+[
+    {
+        "id": 1,
+        "question": "What does PHP stand for?",
+        "options": [
+            "Personal Home Page",
+            "PHP: Hypertext Preprocessor",
+            "Programming Hypertext Processor",
+            "Pretextual Hypertext Parser"
+        ],
+        "correct_answer": "PHP: Hypertext Preprocessor"
+    },
+    {
+        "id": 2,
+        "question": "Which of the following is not a valid way to start a PHP tag?",
+        "options": [
+            "<?php",
+            "<?",
+            "<%",
+            "<script>"
+        ],
+        "correct_answer": "<script>"
+    },
+    {
+        "id": 3,
+        "question": "Which of the following is used to output text in PHP?",
+        "options": [
+            "echo",
+            "print",
+            "printf",
+            "display"
+        ],
+        "correct_answer": "echo"
+    },
+    {
+        "id": 4,
+        "question": "What is the correct way to define a variable in PHP?",
+        "options": [
+            "$variable = 5;",
+            "variable = 5;",
+            "var variable = 5;",
+            "set variable = 5;"
+        ],
+        "correct_answer": "$variable = 5;"
+    },
+    {
+        "id": 5,
+        "question": "What is the concatenation operator in PHP?",
+        "options": [
+            ".",
+            "+",
+            ",",
+            ":"
+        ],
+        "correct_answer": "."
+    },
+    {
+        "id": 6,
+        "question": "Which of the following is the correct way to comment a single line in PHP?",
+        "options": [
+            "// This is a comment",
+            "# This is a comment",
+            "/* This is a comment */",
+            "<!-- This is a comment -->"
+        ],
+        "correct_answer": "// This is a comment"
+    },
+    {
+        "id": 7,
+        "question": "Which of the following is used to check if a variable is empty in PHP?",
+        "options": [
+            "empty()",
+            "null()",
+            "isset()",
+            "isEmpty()"
+        ],
+        "correct_answer": "empty()"
+    },
+    {
+        "id": 8,
+        "question": "What is the correct way to include the contents of a PHP file into another PHP file?",
+        "options": [
+            "include()",
+            "require()",
+            "import()",
+            "load()"
+        ],
+        "correct_answer": "include()"
+    },
+    {
+        "id": 9,
+        "question": "Which of the following is not a valid PHP data type?",
+        "options": [
+            "integer",
+            "boolean",
+            "string",
+            "float"
+        ],
+        "correct_answer": "boolean"
+    },
+    {
+        "id": 10,
+        "question": "What is the correct way to start a session in PHP?",
+        "options": [
+            "session_start()",
+            "start_session()",
+            "session_begin()",
+            "begin_session()"
+        ],
+        "correct_answer": "session_start()"
+    },
+    {
+        "id": 11,
+        "question": "Which of the following is used to redirect the user to a different URL in PHP?",
+        "options": [
+            "header()",
+            "redirect()",
+            "location()",
+            "forward()"
+        ],
+        "correct_answer": "header()"
+    },
+    {
+        "id": 12,
+        "question": "What is the correct way to get the length of a string in PHP?",
+        "options": [
+            "strlen()",
+            "length()",
+            "strlength()",
+            "string_length()"
+        ],
+        "correct_answer": "strlen()"
+    },
+    {
+        "id": 13,
+        "question": "Which of the following is used to perform a MySQL database query in PHP?",
+        "options": [
+            "mysqli_query()",
+            "mysql_query()",
+            "pdo_query()",
+            "query()"
+        ],
+        "correct_answer": "mysqli_query()"
+    },
+    {
+        "id": 14,
+        "question": "What is the correct way to handle errors in PHP?",
+        "options": [
+            "try-catch blocks",
+            "if-else statements",
+            "error_reporting() function",
+            "throwing exceptions"
+        ],
+        "correct_answer": "try-catch blocks"
+    },
+    {
+        "id": 15,
+        "question": "Which of the following is used to loop through an array in PHP?",
+        "options": [
+            "foreach",
+            "for",
+            "while",
+            "do-while"
+        ],
+        "correct_answer": "foreach"
+    },
+    {
+        "id": 16,
+        "question": "What is the correct way to define a constant in PHP?",
+        "options": [
+            "define('CONSTANT_NAME', value);",
+            "const CONSTANT_NAME = value;",
+            "constant CONSTANT_NAME = value;",
+            "$CONSTANT_NAME = value;"
+        ],
+        "correct_answer": "const CONSTANT_NAME = value;"
+    },
+    {
+        "id": 17,
+        "question": "Which of the following is used to sort an array in ascending order in PHP?",
+        "options": [
+            "sort()",
+            "asort()",
+            "rsort()",
+            "arsort()"
+        ],
+        "correct_answer": "sort()"
+    },
+    {
+        "id": 18,
+        "question": "What is the correct way to get the current date and time in PHP?",
+        "options": [
+            "date('Y-m-d H:i:s')",
+            "now()",
+            "current_datetime()",
+            "datetime()"
+        ],
+        "correct_answer": "date('Y-m-d H:i:s')"
+    },
+    {
+        "id": 19,
+        "question": "Which of the following is used to handle file uploads in PHP?",
+        "options": [
+            "$_GET",
+            "$_POST",
+            "$_FILES",
+            "$_REQUEST"
+        ],
+        "correct_answer": "$_FILES"
+    },
+    {
+        "id": 20,
+        "question": "What is the correct way to connect to a MySQL database in PHP?",
+        "options": [
+            "mysql_connect()",
+            "mysqli_connect()",
+            "pdo_connect()",
+            "connect()"
+        ],
+        "correct_answer": "mysqli_connect()"
+    }
+]

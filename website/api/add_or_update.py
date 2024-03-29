@@ -1,25 +1,17 @@
 import requests
-from requests.auth import HTTPBasicAuth
 
-item_data = {
-      "text": "What is the capital of France?",
-      "options": {
-        "a": 'Rome', 
-        "b": "London",
-        "c": "Paris",
-        "d": "Berlin"
-      },
-      "correctAnswer": "Paris",
-
+question_data = {
+    "question": "What is the capital of France?",
+    "options": ["London", "Paris", "Berlin", "Madrid"],
+    "correct_answer": "Paris",
+    "id": 28
 }
 
-response = requests.put(f'http://localhost:5000/api/v1/3', json=item_data, auth=HTTPBasicAuth('percy_magom','6e9ffaebace7cb744324c0e8784a2c69'))
+endpoint = "http://127.0.0.1:5000/api/v1/python/add"
 
-if response.status_code == 201:
-    item = response.json()
-    print('Quiz added or updated successfully:')
-    print(f'questionId: {item["questionId"]}')
-    print(f'text: {item["text"]}')
-    print(f'options: {item["options"]}')
+response = requests.post(endpoint, json=question_data)
+
+if response.status_code == 200:
+    print("Question added successfully!")
 else:
-    print('Error:', response.json())
+    print("Failed to add the question. Error:", response.text)

@@ -1,0 +1,222 @@
+[
+    {
+        "id": 1,
+        "question": "What is JavaScript?",
+        "options": [
+            "A programming language",
+            "A markup language",
+            "A database management system",
+            "A web browser"
+        ],
+        "correct_answer": "A programming language"
+    },
+    {
+        "id": 2,
+        "question": "Which of the following is not a JavaScript data type?",
+        "options": [
+            "String",
+            "Boolean",
+            "Number",
+            "Array"
+        ],
+        "correct_answer": "Array"
+    },
+    {
+        "id": 3,
+        "question": "How do you declare a variable in JavaScript?",
+        "options": [
+            "var",
+            "let",
+            "const",
+            "All of the above"
+        ],
+        "correct_answer": "All of the above"
+    },
+    {
+        "id": 4,
+        "question": "What is the output of the following code?\n\nconsole.log(2 + '2');",
+        "options": [
+            "4",
+            "22",
+            "Error",
+            "NaN"
+        ],
+        "correct_answer": "22"
+    },
+    {
+        "id": 5,
+        "question": "Which operator is used for concatenating strings in JavaScript?",
+        "options": [
+            "+",
+            "-",
+            "*",
+            "/"
+        ],
+        "correct_answer": "+"
+    },
+    {
+        "id": 6,
+        "question": "What is the purpose of the 'if' statement in JavaScript?",
+        "options": [
+            "To declare a function",
+            "To iterate over a loop",
+            "To make a decision based on a condition",
+            "To import external libraries"
+        ],
+        "correct_answer": "To make a decision based on a condition"
+    },
+    {
+        "id": 7,
+        "question": "Which method is used to add an element to the end of an array in JavaScript?",
+        "options": [
+            "push()",
+            "pop()",
+            "shift()",
+            "unshift()"
+        ],
+        "correct_answer": "push()"
+    },
+    {
+        "id": 8,
+        "question": "What is the result of the expression '5' == 5?",
+        "options": [
+            "true",
+            "false",
+            "Error",
+            "NaN"
+        ],
+        "correct_answer": "true"
+    },
+    {
+        "id": 9,
+        "question": "Which function is used to parse a string to an integer in JavaScript?",
+        "options": [
+            "parseInt()",
+            "parseFloat()",
+            "toString()",
+            "toFixed()"
+        ],
+        "correct_answer": "parseInt()"
+    },
+    {
+        "id": 10,
+        "question": "What is the output of the following code?\n\nconsole.log(typeof null);",
+        "options": [
+            "null",
+            "object",
+            "undefined",
+            "Error"
+        ],
+        "correct_answer": "object"
+    },
+    {
+        "id": 11,
+        "question": "Which loop is used to iterate over the elements of an array in JavaScript?",
+        "options": [
+            "if-else loop",
+            "for loop",
+            "while loop",
+            "do-while loop"
+        ],
+        "correct_answer": "for loop"
+    },
+    {
+        "id": 12,
+        "question": "What is the purpose of the 'return' statement in a function?",
+        "options": [
+            "To terminate the function",
+            "To skip the current iteration",
+            "To pass a value back to the caller",
+            "To raise an exception"
+        ],
+        "correct_answer": "To pass a value back to the caller"
+    },
+    {
+        "id": 13,
+        "question": "Which method is used to remove the last element from an array in JavaScript?",
+        "options": [
+            "push()",
+            "pop()",
+            "shift()",
+            "unshift()"
+        ],
+        "correct_answer": "pop()"
+    },
+    {
+        "id": 14,
+        "question": "What is the output of the following code?\n\nconsole.log(10 > 5 && 5 < 3);",
+        "options": [
+            "true",
+            "false",
+            "Error",
+            "NaN"
+        ],
+        "correct_answer": "false"
+    },
+    {
+        "id": 15,
+        "question": "Which function is used to find the length of a string in JavaScript?",
+        "options": [
+            "length()",
+            "size()",
+            "count()",
+            "charAt()"
+        ],
+        "correct_answer": "length()"
+    },
+    {
+        "id": 16,
+        "question": "What is the result of the expression 'undefined' == undefined?",
+        "options": [
+            "true",
+            "false",
+            "Error",
+            "NaN"
+        ],
+        "correct_answer": "true"
+    },
+    {
+        "id": 17,
+        "question": "Which method is used to convert a string to uppercase in JavaScript?",
+        "options": [
+            "toUpperCase()",
+            "toLowerCase()",
+            "trim()",
+            "substring()"
+        ],
+        "correct_answer": "toUpperCase()"
+    },
+    {
+        "id": 18,
+        "question": "What is the output of the following code?\n\nconsole.log(3 + 2 + '7');",
+        "options": [
+            "12",
+            "57",
+            "Error",
+            "NaN"
+        ],
+        "correct_answer": "57"
+    },
+    {
+        "id": 19,
+        "question": "Which keyword is used to define a function in JavaScript?",
+        "options": [
+            "def",
+            "function",
+            "define",
+            "fun"
+        ],
+        "correct_answer": "function"
+    },
+    {
+        "id": 20,
+        "question": "What is the output of the following code?\n\nconsole.log(typeof null);",
+        "options": [
+            "null",
+            "object",
+            "undefined",
+            "Error"
+        ],
+        "correct_answer": "object"
+    }
+]

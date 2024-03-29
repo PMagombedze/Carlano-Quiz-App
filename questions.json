@@ -1,0 +1,222 @@
+[
+    {
+        "correct_answer": "8",
+        "id": 2,
+        "options": [
+            "5",
+            "3",
+            "8",
+            "Error"
+        ],
+        "question": "What is the output of the following code?\n\nx = 5\ny = x + 3\nprint(y)"
+    },
+    {
+        "correct_answer": "List",
+        "id": 3,
+        "options": [
+            "String",
+            "Tuple",
+            "List",
+            "Set"
+        ],
+        "question": "Which of the following is a mutable data type in Python?"
+    },
+    {
+        "correct_answer": "HelloWorld",
+        "id": 4,
+        "options": [
+            "HelloWorld",
+            "Hello World",
+            "Hello + World",
+            "Error"
+        ],
+        "question": "What is the result of the expression 'Hello' + 'World'?"
+    },
+    {
+        "correct_answer": "for loop",
+        "id": 5,
+        "options": [
+            "if-else loop",
+            "for loop",
+            "while loop",
+            "do-while loop"
+        ],
+        "question": "Which loop is used to iterate over a sequence of elements in Python?"
+    },
+    {
+        "correct_answer": "To define an empty code block",
+        "id": 6,
+        "options": [
+            "To terminate a loop",
+            "To skip an iteration",
+            "To define an empty code block",
+            "To raise an exception"
+        ],
+        "question": "What is the purpose of the 'pass' statement in Python?"
+    },
+    {
+        "correct_answer": "[2, 3, 4]",
+        "id": 7,
+        "options": [
+            "[1, 2, 3, 4]",
+            "[2, 3, 4]",
+            "[2, 3]",
+            "[1, 2, 3]"
+        ],
+        "question": "What is the output of the following code?\n\nnumbers = [1, 2, 3, 4, 5]\nprint(numbers[1:4])"
+    },
+    {
+        "correct_answer": "delete()",
+        "id": 8,
+        "options": [
+            "remove()",
+            "pop()",
+            "delete()",
+            "clear()"
+        ],
+        "question": "Which of the following is not a valid method for removing an item from a list in Python?"
+    },
+    {
+        "correct_answer": "True",
+        "id": 9,
+        "options": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ],
+        "question": "What is the output of the following code?\n\nx = 10\ny = 5\nprint(x > y)"
+    },
+    {
+        "correct_answer": "datetime",
+        "id": 10,
+        "options": [
+            "datetime",
+            "math",
+            "os",
+            "random"
+        ],
+        "question": "Which of the following is a built-in module in Python for working with dates and times?"
+    },
+    {
+        "correct_answer": "Error",
+        "id": 11,
+        "options": [
+            "11",
+            "10",
+            "9",
+            "Error"
+        ],
+        "question": "What is the result of the expression '10' + 1?"
+    },
+    {
+        "correct_answer": "ell",
+        "id": 12,
+        "options": [
+            "ell",
+            "H",
+            "Hel",
+            "Hello"
+        ],
+        "question": "What is the output of the following code?\n\nx = 'Hello'\nprint(x[1:4])"
+    },
+    {
+        "correct_answer": "Set",
+        "id": 13,
+        "options": [
+            "List",
+            "Tuple",
+            "Dictionary",
+            "Set"
+        ],
+        "question": "Which of the following is a Python data type that represents a collection of unique elements?"
+    },
+    {
+        "correct_answer": "8",
+        "id": 14,
+        "options": [
+            "2",
+            "3",
+            "8",
+            "6"
+        ],
+        "question": "What is the result of the expression 2 ** 3?"
+    },
+    {
+        "correct_answer": "break",
+        "id": 15,
+        "options": [
+            "break",
+            "exit",
+            "continue",
+            "return"
+        ],
+        "question": "Which keyword is used to exit a loop prematurely in Python?"
+    },
+    {
+        "correct_answer": "To skip an iteration",
+        "id": 16,
+        "options": [
+            "To terminate a loop",
+            "To skip an iteration",
+            "To resume the next iteration",
+            "To raise an exception"
+        ],
+        "question": "What is the purpose of the 'continue' statement in Python?"
+    },
+    {
+        "correct_answer": "[1, 2, 3, 4]",
+        "id": 17,
+        "options": [
+            "[1, 2, 3]",
+            "[1, 2, 3, 4]",
+            "[4, 3, 2, 1]",
+            "[1, 2, 3, [4]]"
+        ],
+        "question": "What is the output of the following code?\n\nx = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)"
+    },
+    {
+        "correct_answer": "strip()",
+        "id": 18,
+        "options": [
+            "strip()",
+            "trim()",
+            "clean()",
+            "remove()"
+        ],
+        "question": "Which of the following is used to remove leading and trailing whitespace from a string in Python?"
+    },
+    {
+        "correct_answer": "True",
+        "id": 19,
+        "options": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ],
+        "question": "What is the output of the following code?\n\nx = 5\ny = 3\nprint(x != y)"
+    },
+    {
+        "correct_answer": "random",
+        "id": 20,
+        "options": [
+            "random",
+            "math",
+            "statistics",
+            "decimal"
+        ],
+        "question": "Which module in Python can be used to generate random numbers?"
+    },
+    {
+        "correct_answer": "101010",
+        "id": 21,
+        "options": [
+            "10",
+            "30",
+            "100",
+            "Error"
+        ],
+        "question": "What is the result of the expression '10' * 3?"
+    }
+]

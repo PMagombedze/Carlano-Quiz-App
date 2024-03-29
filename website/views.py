@@ -40,3 +40,14 @@ def dashboard():
     response.headers['Content-Disposition'] = 'inline'
 
     return response
+
+
+@views.route('/quiz/dashboard_')
+@login_required
+def dash():
+    html = render_template('quizzes/dash_.html', user=current_user)
+    minified_html = minify(html)
+    response = make_response(minified_html)
+    response.headers['Content-Disposition'] = 'inline'
+
+    return response

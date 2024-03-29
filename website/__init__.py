@@ -51,13 +51,14 @@ def create_app():
         text = db.Column(db.String(100))
         options = db.Column(db.String(100))
         correctAnswer = db.Column(db.Integer)
+        category = db.Column(db.String(100))
 
     class ItemResource(Resource):
         @basic_auth.required
         def get(self, item_id):
             item = Item.query.get(item_id)
             if item:
-                return {'questionId': item.questionId, 'text': item.text, 'options': item.options, 'correct_answer': item.correctAnswer}
+                return {'questionId': item.questionId, 'text': item.text, 'options': item.options, 'correct_answer': item.correctAnswer, 'category': item.category}
             return {'message': 'Quiz not found'}, 404
 
         @basic_auth.required
@@ -66,6 +67,7 @@ def create_app():
             parser.add_argument('text')
             parser.add_argument('options')
             parser.add_argument('correctAnswer')
+            parser.add_argument('category')
             args = parser.parse_args()
 
             item = Item.query.get(item_id)
@@ -73,12 +75,13 @@ def create_app():
                 item.text = args['text']
                 item.options = args['options']
                 item.correctAnswer = args['correctAnswer']
+                item.category = args['category']
             else:
-                item = Item(questionId=item_id, text=args['text'], options=args['options'], correctAnswer=args['correctAnswer'])
+                item = Item(questionId=item_id, text=args['text'], options=args['options'], correctAnswer=args['correctAnswer'], category=args['category'])
                 db.session.add(item)
 
             db.session.commit()
-            return {'questionId': item.questionId, 'text': item.text, 'options': item.options, 'correct_answer': item.correctAnswer}, 201
+            return {'questionId': item.questionId, 'text': item.text, 'options': item.options, 'correct_answer': item.correctAnswer, 'category': item.category}, 201
 
         @basic_auth.required
         def delete(self, item_id):

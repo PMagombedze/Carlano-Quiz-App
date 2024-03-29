@@ -1,0 +1,222 @@
+[
+    {
+        "id": 1,
+        "question": "What is WordPress?",
+        "options": [
+            "A content management system",
+            "A programming language",
+            "A web hosting service",
+            "A database management system"
+        ],
+        "correct_answer": "A content management system"
+    },
+    {
+        "id": 2,
+        "question": "Which of the following is not a component of WordPress?",
+        "options": [
+            "Themes",
+            "Plugins",
+            "Widgets",
+            "Templates"
+        ],
+        "correct_answer": "Templates"
+    },
+    {
+        "id": 3,
+        "question": "What is a theme in WordPress?",
+        "options": [
+            "A design template for a website",
+            "A programming language",
+            "A database table",
+            "A file format for images"
+        ],
+        "correct_answer": "A design template for a website"
+    },
+    {
+        "id": 4,
+        "question": "Which programming language is used to develop WordPress?",
+        "options": [
+            "PHP",
+            "Python",
+            "JavaScript",
+            "Ruby"
+        ],
+        "correct_answer": "PHP"
+    },
+    {
+        "id": 5,
+        "question": "What is a plugin in WordPress?",
+        "options": [
+            "A software extension that adds functionality to WordPress",
+            "A database table",
+            "A file format for images",
+            "A design template for a website"
+        ],
+        "correct_answer": "A software extension that adds functionality to WordPress"
+    },
+    {
+        "id": 6,
+        "question": "Which of the following is not a type of WordPress plugin?",
+        "options": [
+            "Social media sharing",
+            "Search engine optimization",
+            "Image editing",
+            "Security"
+        ],
+        "correct_answer": "Image editing"
+    },
+    {
+        "id": 7,
+        "question": "What is the WordPress dashboard?",
+        "options": [
+            "The administrative area of a WordPress website",
+            "A database management tool",
+            "A file storage location",
+            "A programming interface"
+        ],
+        "correct_answer": "The administrative area of a WordPress website"
+    },
+    {
+        "id": 8,
+        "question": "Which file is responsible for the overall styling of a WordPress website?",
+        "options": [
+            "style.css",
+            "index.php",
+            "functions.php",
+            "header.php"
+        ],
+        "correct_answer": "style.css"
+    },
+    {
+        "id": 9,
+        "question": "What is a shortcode in WordPress?",
+        "options": [
+            "A small piece of code that performs a specific function",
+            "A file storage location",
+            "A database table",
+            "A design template for a website"
+        ],
+        "correct_answer": "A small piece of code that performs a specific function"
+    },
+    {
+        "id": 10,
+        "question": "What is the purpose of the 'wp-config.php' file in WordPress?",
+        "options": [
+            "To store database configuration settings",
+            "To manage website content",
+            "To control plugin settings",
+            "To define the website's structure"
+        ],
+        "correct_answer": "To store database configuration settings"
+    },
+    {
+        "id": 11,
+        "question": "What is the default database used by WordPress?",
+        "options": [
+            "MySQL",
+            "SQLite",
+            "PostgreSQL",
+            "Oracle"
+        ],
+        "correct_answer": "MySQL"
+    },
+    {
+        "id": 12,
+        "question": "What is a widget in WordPress?",
+        "options": [
+            "A small block of content or functionality",
+            "A programming language",
+            "A file format for images",
+            "A design template for a website"
+        ],
+        "correct_answer": "A small block of content or functionality"
+    },
+    {
+        "id": 13,
+        "question": "What is the purpose of the 'functions.php' file in WordPress?",
+        "options": [
+            "To add custom functionality to a theme",
+            "To manage website content",
+            "To control plugin settings",
+            "To define the website's structure"
+        ],
+        "correct_answer": "To add custom functionality to a theme"
+    },
+    {
+        "id": 14,
+        "question": "What is a permalink in WordPress?",
+        "options": [
+            "A permanent URL structure for posts and pages",
+            "A file storage location",
+            "A database table",
+            "A design template for a website"
+        ],
+        "correct_answer": "A permanent URL structure for posts and pages"
+    },
+    {
+        "id": 15,
+        "question": "Which of the following is not a WordPress user role?",
+        "options": [
+            "Administrator",
+            "Editor",
+            "Subscriber",
+            "Developer"
+        ],
+        "correct_answer": "Developer"
+    },
+    {
+        "id": 16,
+        "question": "What is the purpose of the 'index.php' file in WordPress?",
+        "options": [
+            "To serve as the main entry point for a WordPress website",
+            "To manage website content",
+            "To control plugin settings",
+            "To define the website's structure"
+        ],
+        "correct_answer": "To serve as the main entry point for a WordPress website"
+    },
+    {
+        "id": 17,
+        "question": "What is the purpose of the 'header.php' file in WordPress?",
+        "options": [
+            "To define the header section of a theme",
+            "To manage website content",
+            "To control plugin settings",
+            "To define the website's structure"
+        ],
+        "correct_answer": "To define the header section of a theme"
+    },
+    {
+        "id": 18,
+        "question": "What is the purpose of the 'footer.php' file in WordPress?",
+        "options": [
+            "To define the footer section of a theme",
+            "To manage website content",
+            "To control plugin settings",
+            "To define the website's structure"
+        ],
+        "correct_answer": "To define the footer section of a theme"
+    },
+    {
+        "id": 19,
+        "question": "Which of the following is not a recommended practice for WordPress security?",
+        "options": [
+            "Using strong passwords",
+            "Regularly updating themes and plugins",
+            "Using outdated versions of WordPress",
+            "Installing a security plugin"
+        ],
+        "correct_answer": "Using outdated versions of WordPress"
+    },
+    {
+        "id": 20,
+        "question": "What is the purpose of the 'functions.php' file in a child theme?",
+        "options": [
+            "To override or extend the functionality of the parent theme",
+            "To manage website content",
+            "To control plugin settings",
+            "To define the website's structure"
+        ],
+        "correct_answer": "To override or extend the functionality of the parent theme"
+    }
+]
