@@ -1,20 +1,29 @@
 {% include 'imports.html' %}
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<h1 style="display: none;">{{ score }}</h1>
+<h1 style="display: none">{{ score }}</h1>
+<h1 style="display: none">{{ total }}</h1>
 <script>
-    const data = "{{ score }}"
-    if (data == 20) {
-        swal("Good job!", `You got a perfect score ${data}/20`, "success").then((value) => {
-            window.location.replace("http://127.0.0.1:5000/quiz/dashboard_");
-          });
-    }
-    else {
-        swal("Try again", `You got some questions wrong ${data}/20`, "error").then((value) => {
-            window.location.replace("http://127.0.0.1:5000/quiz/dashboard_");
-          });
-    }
-  
+  const data = "{{ score }}";
+  const total = "{{ total }}";
+  if (data == total) {
+    swal(
+      "Good job!",
+      `You got a perfect score ${data}/${total}`,
+      "success"
+    ).then((value) => {
+      window.location.replace("http://127.0.0.1:5000/quiz/dashboard_");
+    });
+  } else {
+    swal(
+      "Try again",
+      `You got some questions wrong ${data}/${total}`,
+      "error"
+    ).then((value) => {
+      window.location.replace("http://127.0.0.1:5000/quiz/dashboard_");
+    });
+  }
+
   document.addEventListener("contextmenu", function (event) {
     event.preventDefault();
   });

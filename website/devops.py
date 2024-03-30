@@ -46,6 +46,7 @@ def get_questions():
 def quiz():
     if "score" not in session:
         session["score"] = 0
+        session["total"] = 0
 
     if request.method == "POST":
         selected_answer = request.form.get("answer")
@@ -59,20 +60,23 @@ def quiz():
         else:
             flash("Incorrect. The correct answer is: " + questions[question_index]["correct_answer"])
 
+        session["total"] += 1
         question_index += 1
 
         if question_index >= len(questions):
             return redirect(url_for("devops.show_score"))
 
-        return render_template("quizzes/python.html", question=questions[question_index], question_index=question_index, score=session["score"], course="DevOps")
+        return render_template("quizzes/python.html", question=questions[question_index], question_index=question_index, score=session["score"], total=session["total"], course="DevOps")
 
     session["score"] = 0
+    session["total"] = 0
     questions = load_questions()
-    return render_template("quizzes/python.html", question=questions[0], question_index=0, score=session["score"], course="DevOps")
+    return render_template("quizzes/python.html", question=questions[0], question_index=0, score=session["score"], total=session["total"], course="DevOps")
 
 
 @devops.route("/score")
 @login_required
 def show_score():
     score = session.pop("score", 0)
-    return render_template('quizzes/score.html', score=score)
+    total = session.pop("total", 0)
+    return render_template('quizzes/score.html', score=score, total=total)

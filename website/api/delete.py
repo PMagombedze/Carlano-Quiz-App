@@ -1,10 +1,28 @@
 import requests
-from requests.auth import HTTPBasicAuth
+import json
 
+QUESTION_API_URL = "http://127.0.0.1:5000/api/v1/python/"
 
-response = requests.delete('http://localhost:5000/api/v1/0', auth=HTTPBasicAuth('05992ccec183b09f19354ba55014c19b','6e9ffaebace7cb744324c0e8784a2c69'))
+def delete_question(question_data):
+    headers = {"Content-Type": "application/json"}
+    response = requests.request("DELETE", QUESTION_API_URL, headers=headers, data=json.dumps(question_data))
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return {"success": False, "error": "Failed to delete question"}
 
-if response.status_code == 200:
-    print('Quiz deleted successfully')
-else:
-    print('Error:', response.json())
+# Example usage
+question_data = {
+        "correct_answer": "8",
+        "id": 2,
+        "options": [
+            "5",
+            "3",
+            "8",
+            "Error"
+        ],
+        "question": "What is the output of the following code?\n\nx = 5\ny = x + 3\nprint(y)"
+    }
+
+result = delete_question(question_data)
+print(result)
