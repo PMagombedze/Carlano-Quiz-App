@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, flash, url_for, request, redirect, session, jsonify, json
 from flask_login import login_required
+from . import basic_auth
+
 
 linux = Blueprint("linux", __name__)
 
@@ -17,6 +19,7 @@ def save_questions(questions):
         json.dump(questions, f)
 
 @linux.route("/api/v1/linux/add", methods=["POST"])
+@basic_auth.required
 def add_question():
     question_data = request.get_json()
 
@@ -36,6 +39,7 @@ def add_question():
     return jsonify(success=True)
 
 @linux.route("/api/v1/linux/", methods=["GET"])
+@basic_auth.required
 def get_questions():
     questions = load_questions()
     return jsonify(questions)

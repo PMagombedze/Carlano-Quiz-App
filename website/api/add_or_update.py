@@ -1,4 +1,6 @@
 import requests
+from requests.auth import HTTPBasicAuth
+
 
 question_data = {
     "question": "What is the capital of France?",
@@ -9,7 +11,7 @@ question_data = {
 
 endpoint = "http://127.0.0.1:5000/api/v1/python/add"
 
-response = requests.post(endpoint, json=question_data)
+response = requests.post(endpoint, json=question_data, auth=HTTPBasicAuth('percy_magom','L3mm1ng$'))
 
 if response.status_code == 200:
     print("Question added successfully!")

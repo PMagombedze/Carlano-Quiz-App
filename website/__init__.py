@@ -12,14 +12,12 @@ from flask_basicauth import BasicAuth
 
 db = SQLAlchemy()
 app = Flask(__name__)
+app.config['BASIC_AUTH_USERNAME'] = 'percy_magom'
+app.config['BASIC_AUTH_PASSWORD'] = 'L3mm1ng$'
+basic_auth = BasicAuth(app)
 
 def create_app():
     #app = Flask(__name__)
-
-    app.config['BASIC_AUTH_USERNAME'] = '05992ccec183b09f19354ba55014c19b'
-    app.config['BASIC_AUTH_PASSWORD'] = '6e9ffaebace7cb744324c0e8784a2c69'
-
-    basic_auth = BasicAuth(app)
 
     from .views import views
     from .auth import auth
